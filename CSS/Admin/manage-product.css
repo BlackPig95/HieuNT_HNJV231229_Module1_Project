@@ -1,0 +1,220 @@
+@import "admin.css";
+
+/* Các nút add và sort */
+.manage-movie {
+    padding: 2rem 2rem 5rem 2rem;
+    margin: 2rem;
+    border-radius: 20px;
+    background-color: white;
+}
+
+.manage-movie .manage-action {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.manage-movie .manage-action button {
+    background-color: black;
+    color: white;
+    text-align: center;
+    width: 7rem;
+    height: 2rem;
+    border-radius: 5px;
+}
+
+.manage-movie .manage-action form {
+    width: 8rem;
+    border: 1px solid rgba(65, 59, 59, 0.5);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+}
+
+.manage-movie .manage-action form label {
+    display: inline-block;
+}
+
+.manage-movie .manage-action form select {
+    border: none;
+}
+
+/* Table section */
+.manage-table {
+    position: relative;
+}
+
+.manage-movie .manage-table {
+    width: 100%;
+    text-align: left;
+}
+
+.manage-movie .manage-table table {
+    border-collapse: collapse;
+}
+
+.manage-movie .manage-table thead tr th:nth-child(1) {
+    width: 10%;
+}
+
+.manage-movie .manage-table thead tr th:nth-child(2) {
+    width: 15%;
+}
+
+.manage-movie .manage-table thead tr th:nth-child(3) {
+    width: 25%;
+}
+
+.manage-movie .manage-table thead tr th:nth-child(4),
+.manage-movie .manage-table thead tr th:nth-child(5),
+.manage-movie .manage-table thead tr th:nth-child(6) {
+    width: 15%;
+}
+
+.manage-movie .manage-table thead tr th:nth-child(7) {
+    text-align: center;
+}
+
+td,
+th {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    max-width: 15rem;
+    min-width: 1px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 1rem 0;
+}
+
+/* Style các nút ở mục action */
+.edit-button {
+    background-color: orange;
+    color: white;
+    width: 3rem;
+    height: 1.5rem;
+    border: none;
+}
+
+.delete-button {
+    background-color: red;
+    color: white;
+    width: 3rem;
+    height: 1.5rem;
+    border: none;
+}
+
+.delete-button:hover {
+    cursor: pointer;
+}
+
+/* Style các nút chuyển trang */
+.button-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 2rem;
+}
+
+/* Khu vực style dành cho phần add movie */
+
+.form-movie {
+    display: flex;
+    column-gap: 2rem;
+    padding: 2rem;
+    background-color: white;
+    margin: 2rem;
+    border-radius: 10px;
+}
+
+.form-movie a {
+    text-decoration: none;
+    color: blue;
+    width: 5rem;
+    height: 2rem;
+}
+
+.form-movie .form-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5rem;
+    width: 100%;
+}
+
+.form-movie .form-container input,
+.form-movie .form-container textarea,
+.form-movie .form-container select {
+    width: 80%;
+    resize: none;
+    height: 2rem;
+}
+
+.form-movie .form-container textarea {
+    height: 5rem;
+}
+
+.form-movie .form-container button {
+    width: 10rem;
+    height: 2rem;
+    border-radius: 5px;
+    background-color: black;
+    border: none;
+    color: white;
+}
+
+.form-movie .form-container button:hover {
+    cursor: pointer;
+}
+
+.form-movie .form-container #img-button {
+    display: inline-block;
+    width: 15rem;
+    height: 1.5rem;
+}
+
+/* Style dùng để switch giữa các phần: Manage/Add/Edit */
+.hidden {
+    display: none;
+}
+
+/* Tạo hiệu ứng ngón tay khi di chuyển lên nút edit */
+.cursor-pointer:hover {
+    cursor: pointer;
+}
+
+/* Pagination */
+#pagination-nav {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#pagination-nav .pagination {
+    display: inline-block;
+    list-style: none;
+    padding: 0;
+}
+
+#pagination-nav .pagination li {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+#pagination-nav .pagination li a {
+    color: black;
+    padding: 8px 16px;
+    text-decoration: none;
+    border: 1px solid #ddd;
+    transition: background-color 0.3s;
+}
+
+#pagination-nav .pagination li a.active {
+    background-color: #4caf50;
+    color: white;
+    border: 1px solid #4caf50;
+    border-radius: 0px;
+}
+
+#pagination-nav .pagination li a:hover:not(.active) {
+    background-color: #ddd;
+}

@@ -1,0 +1,174 @@
+/* Phân vùng *\
+\*-----------*/
+body {
+    width: 100%;
+    display: flex;
+    position: relative;
+    align-items: start;
+    align-content: start;
+    background-color: #F3F3F3;
+}
+
+/* Thanh nav bar *\
+\*-------------- */
+nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    height: 100vh;
+    width: 20vw;
+    background-color: black;
+    color: rgb(186, 186, 186);
+    padding-left: 2rem;
+}
+
+nav h2 {
+    text-align: left;
+    width: 100%;
+    /* margin-top: 2rem;
+    margin-bottom: 4rem; */
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+    color: white;
+}
+
+nav div {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+nav div p {
+    margin-bottom: 2rem;
+    cursor: pointer;
+}
+
+nav div p i {
+    margin-right: 1rem;
+}
+
+.nav-bar {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+    height: 100%;
+    font-size: 1.2rem;
+}
+
+.nav-bar li {
+    list-style: none;
+    position: relative;
+    padding: 1rem 2rem;
+    width: 90%;
+}
+
+.nav-bar li a {
+    text-decoration: none;
+    color: rgb(186, 186, 186);
+}
+
+/* Hiệu ứng chuyển trang */
+.active {
+    background-color: #2D2D2E;
+    border-radius: 1000px;
+    /*Set giá trị border radius cực cao hoặc set = line height sẽ tạo hình viên thuốc*/
+    /* line-height: 50px;
+    border-radius: 50px; */
+}
+
+/* Thanh tìm kiếm và tên tài khoản */
+.information-section {
+    width: 100%;
+}
+
+.information-nav {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    padding: 2rem 7rem 2rem 2rem;
+    background-color: white;
+}
+
+.information-nav>div {
+    display: flex;
+    justify-content: space-evenly;
+    column-gap: 6rem;
+}
+
+.avatar-section {
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+}
+
+.avatar-section img {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+}
+
+.information-nav .search-field {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background-color: #F3F3F3;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 10px;
+}
+
+.information-nav .search-field input,
+.information-nav .search-field button {
+    border: none;
+    margin-right: 1rem;
+    background-color: #F3F3F3;
+}
+
+.information-nav .search-field button:hover {
+    cursor: pointer;
+}
+
+/* Khung hiển thị thông tin dashboard */
+.information-tab {
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 2rem;
+    width: 100%;
+    height: 84vh;
+    padding: 2rem;
+}
+
+.information-tab .information-content {
+    padding: 1rem;
+    border-radius: 10px;
+    background-color: white;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    font-size: x-large;
+    font-weight: 700;
+}
+
+.information-tab .information-content:nth-child(1) {
+    background-color: black;
+    color: white;
+}
+
+.information-tab .information-content:nth-child(4) {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.information-tab .information-content:nth-child(4) img {
+    width: 100%;
+    height: 20rem;
+}
+
+.information-tab .information-content:nth-child(5) {
+    grid-row: span 2;
+    width: 20rem;
+    height: 20rem;
+}

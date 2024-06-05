@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Đặt vé</title>
+        <!-- File CSS -->
+        <link href="../../CSS/BookingTicket/book-ticket.css" rel="stylesheet" />
+        <!-- Reset website -->
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="movie-info-container">
+            <a href="../../index.html">Quay lại trang chủ</a>
+            <h3 id="movie-name">Tên phim: </h3><br />
+            <h3 id="movie-price">Giá vé: </h3><br />
+            <h3 id="movie-time">Chọn lịch chiếu: </h3><br />
+            <div class="booking-container">
+                <h3 id="movie-seat">Chọn chỗ ngồi</h3>
+                <br />
+                <div class="seat-legend">
+                    <div>
+                        <div class="seat-avai"></div>
+                        <small>Còn trống</small>
+                    </div>
+                    <div>
+                        <div class="seat-not-avai"></div>
+                        <small>Không còn trống</small>
+                    </div>
+                    <div>
+                        <div class="seat-selected"></div>
+                        <small>Ghế bạn chọn</small>
+                    </div>
+                </div>
+                <div class="screen"></div>
+                <div class="seat-container">
+                    <div class="row">
+                        <div class="seat">A1</div>
+                        <div class="seat">A2</div>
+                        <div class="seat">A3</div>
+                        <div class="seat">A4</div>
+                        <div class="seat">A5</div>
+                        <div class="seat seat-not-avai">A6</div>
+                        <div class="seat">A7</div>
+                        <div class="seat">A8</div>
+                    </div>
+                    <div class="row">
+                        <div class="seat">B1</div>
+                        <div class="seat seat-not-avai">B2</div>
+                        <div class="seat">B3</div>
+                        <div class="seat">B4</div>
+                        <div class="seat">B5</div>
+                        <div class="seat">B6</div>
+                        <div class="seat">B7</div>
+                        <div class="seat">B8</div>
+                    </div>
+                    <div class="row">
+                        <div class="seat">C1</div>
+                        <div class="seat seat-not-avai">C2</div>
+                        <div class="seat seat-not-avai">C3</div>
+                        <div class="seat seat-not-avai">C4</div>
+                        <div class="seat">C5</div>
+                        <div class="seat">C6</div>
+                        <div class="seat">C7</div>
+                        <div class="seat seat-not-avai">C8</div>
+                    </div>
+                    <div class="row">
+                        <div class="seat seat-not-avai">D1</div>
+                        <div class="seat">D2</div>
+                        <div class="seat">D3</div>
+                        <div class="seat">D4</div>
+                        <div class="seat seat-not-avai">D5</div>
+                        <div class="seat">D6</div>
+                        <div class="seat">D7</div>
+                        <div class="seat">D8</div>
+                    </div>
+                </div>
+                <div id="payment-info">
+                    <h3 id="total-cost">Tổng tiền: </h3>
+                    <h3 id="selected-time">Lịch chiếu đã chọn: </h3>
+                    <a id="purchase-ticket" href="#">
+                        <h3>Đặt vé</h3>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="complete-purchase-container hidden">
+            <a id="complete-back" href="#">Sửa lại đơn hàng</a>
+            <div class="complete-purchase-info">
+                <h2>Hoàn tất đặt vé</h2>
+                <div>
+                    <h3 id="complete-name">Tên bộ phim:</h3>
+                    <h3 id="complete-time">Lịch chiếu:</h3>
+                    <h3 id="complete-seat">Số ghế đã chọn:</h3>
+                    <h3 id="complete-price">Tổng tiền thanh toán:</h3>
+                    <a id="complete-pay" href="#">
+                        <h3>Thanh toán</h3>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <script src="../../JS/BookingTicket/book-ticket.js"></script>
+        <!-- Sweet alert CDN -->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.5/dist/sweetalert2.all.min.js"></script>
+    </body>
+
+</html>

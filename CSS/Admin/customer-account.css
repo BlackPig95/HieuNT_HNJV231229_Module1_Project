@@ -1,0 +1,108 @@
+@import "admin.css";
+
+.customer-account-container {
+    margin: 2rem;
+    padding: 5rem;
+    background-color: white;
+    border-radius: 10px;
+    position: relative;
+}
+
+.customer-account-container table {
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+}
+
+.customer-account-container table tr {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.customer-account-container table td,
+.customer-account-container table th {
+    padding: 1rem 0rem;
+}
+
+.customer-account-container table th:nth-child(2) {
+    width: 15%;
+}
+
+.customer-account-container table th:nth-child(6) {
+    text-align: center;
+    width: 25%;
+}
+
+.customer-account-container table th:nth-child(7) {
+    width: 10%;
+}
+
+.button-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    margin-bottom: 1rem;
+}
+
+/* Style cho các nút xóa và khóa, mở khóa tài khoản */
+.lock-button,
+.delete-button,
+.unlock-button {
+    background-color: red;
+    color: white;
+    margin-left: 0.5rem;
+    width: 6rem;
+    height: 2rem;
+    border: none;
+}
+
+.delete-button {
+    background-color: orange;
+}
+
+.lock-button:hover,
+.delete-button:hover,
+.unlock-button {
+    cursor: pointer;
+}
+
+.unlock-button {
+    background-color: green;
+}
+
+
+/* Pagination */
+#pagination-nav {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#pagination-nav .pagination {
+    display: inline-block;
+    list-style: none;
+    padding: 0;
+}
+
+#pagination-nav .pagination li {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+#pagination-nav .pagination li a {
+    color: black;
+    padding: 8px 16px;
+    text-decoration: none;
+    border: 1px solid #ddd;
+    transition: background-color 0.3s;
+}
+
+#pagination-nav .pagination li a.active {
+    background-color: #4caf50;
+    color: white;
+    border: 1px solid #4caf50;
+    border-radius: 0px;
+}
+
+#pagination-nav .pagination li a:hover:not(.active) {
+    background-color: #ddd;
+}

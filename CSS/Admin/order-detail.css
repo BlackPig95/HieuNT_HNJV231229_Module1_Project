@@ -1,0 +1,67 @@
+@import "admin.css";
+
+.order-detail-container {
+    margin: 2rem;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    row-gap: 2rem;
+}
+
+.order-detail-container .order-detail-form {
+    width: 50%;
+}
+
+.order-detail-container .order-detail-form>div {
+    display: flex;
+    column-gap: 5rem;
+}
+
+.order-detail-container .order-detail-form .order-description,
+.order-detail-container .order-detail-form .order-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    row-gap: 1rem;
+}
+
+.order-detail-container .order-detail-form .order-info input {
+    border: none;
+}
+
+.order-detail-container .order-detail-form button {
+    margin-top: 2rem;
+    background-color: #428BCA;
+    width: 5rem;
+    height: 2rem;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.order-detail-container table {
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+.order-detail-container table th {
+    background-color: #E5E5E5;
+    border: 1px solid rgba(115, 113, 113, 0.3);
+}
+
+.order-detail-container table td {
+    border: 1px solid rgba(115, 113, 113, 0.3);
+}
+
+.order-detail-container table td button {
+    background-color: #D9534F;
+    color: white;
+    border: none;
+    width: 5rem;
+    height: 1.5rem;
+    border-radius: 5px;
+}

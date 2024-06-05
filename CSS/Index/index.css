@@ -1,0 +1,632 @@
+/* Header section */
+/* Flex box để dàn đều logo và các đường dẫn trên thanh nav */
+html {
+    scroll-behavior: smooth;
+    /* Không hoạt động??? Có thể do browser chưa được support*/
+}
+
+.head-nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 80px;
+    /* background-color: var(--nav-background-color); */
+    background-color: white;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    transition: background-color 0.5s ease;
+}
+
+.head-nav-colored {
+    background-color: rgb(156, 156, 156);
+    z-index: 999;
+}
+
+.head-nav-container img {
+    width: 7rem;
+    height: auto;
+    object-fit: fill;
+}
+
+.head-nav-container nav {
+    width: 60%;
+    margin-left: 12.5rem;
+    /* Cho khu vực navigation ra giữa trang cho dễ nhìn */
+}
+
+/* Xóa gạch chân và màu chữ mặc định của thẻ a */
+
+.head-nav-container a {
+    text-decoration: none;
+    /* color: white; */
+    color: rgb(0, 0, 0);
+    font-weight: 800;
+}
+
+.head-nav-container a:hover,
+.head-nav-container li:hover {
+    transition: transform 1s;
+    transform: scale(1.1);
+    color: blue;
+}
+
+/* Dàn đều thanh nav chính */
+.head-nav-container ul {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style: none;
+}
+
+/* Font size cho thanh nav */
+.head-nav-container ul li,
+.register-login a {
+    font-size: 1.8rem;
+}
+
+/* Dàn đều khu vực đăng nhập đăng ký */
+.register-login {
+    display: flex;
+    justify-content: space-evenly;
+    width: 20%;
+}
+
+/* Khu vực carousel *\
+\* ----------------*/
+/* Đặt position cho div cha để tiện style các div con */
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    margin-top: 10rem;
+}
+
+.carousel-track {
+    display: flex;
+    column-gap: 2rem;
+}
+
+/* Style ảnh trong carousel */
+.carousel-item {
+    flex: 1 0 70%;
+}
+
+.carousel-item img {
+    user-select: none;
+    display: block;
+    width: 100%;
+    object-fit: fill;
+    height: 70vh;
+    padding-left: 1rem;
+}
+
+/* Style các nút di chuyển trái phải */
+.prev-button,
+.next-button {
+    user-select: none;
+    font-size: 2rem;
+    line-height: 3rem;
+    text-align: center;
+    background-color: rgba(79, 62, 62, 0.5);
+    color: white;
+    width: 3.75rem;
+    height: 3.75rem;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.prev-button:hover,
+.next-button:hover {
+    background-color: black;
+    cursor: pointer;
+}
+
+.prev-button {
+    left: -1.5rem;
+    padding-left: 1.25rem;
+}
+
+.next-button {
+    right: -1.5rem;
+    padding-right: 1.25rem;
+}
+
+/* Style cho các button tròn sẽ được thêm vào từ JS */
+.indicator-nav {
+    position: absolute;
+    z-index: 9999;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 10px;
+}
+
+.carousel-indicator {
+    width: 1rem;
+    z-index: 99999;
+    height: 1rem;
+    border: 1px solid white;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 50%;
+    margin-left: 0.3rem;
+    transition: background-color 0.2s;
+}
+
+.carousel-indicator:hover {
+    cursor: pointer;
+}
+
+.carousel-indicator.active {
+    background-color: rgb(177, 177, 177);
+}
+
+/*Phần phim đang chiếu và sắp chiếu*\
+\*---------------------------------*/
+main {
+    margin-left: 5vw;
+    margin-top: 5rem;
+    margin-right: 5vw;
+}
+
+/* Thanh màu bên trái */
+.main-movie-section div h2::before {
+    content: '';
+    border: 3px solid rgb(88, 11, 241);
+    margin-right: 1rem;
+}
+
+.main-movie-section div h3:hover {
+    color: rgb(165, 165, 251);
+    cursor: pointer;
+}
+
+/* Thanh màu gạch chân khi được chọn */
+.main-movie-section div h3.active {
+    border-bottom: 2px solid rgb(88, 11, 241);
+    color: rgb(88, 11, 241);
+}
+
+/* Thẻ div đầu tiên ở phần main movie section */
+.main-movie-section>div {
+    display: flex;
+    justify-content: start;
+    margin-bottom: 5rem;
+}
+
+/* 2 thẻ phim đang chiếu và sắp chiếu */
+.showing-movie,
+.incoming-movie {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: space-evenly;
+    gap: 2rem;
+}
+
+/* 2 dòng chữ phim đang chiếu và phim sắp chiếu */
+.main-movie-title {
+    display: flex;
+    justify-content: center;
+    column-gap: 10rem;
+    margin-left: 20vw;
+}
+
+.main-movie-title h3 {
+    font-size: 1.5rem;
+}
+
+/* Các thẻ chứa nội dung về phim đang chiếu và sắp chiếu*/
+.movie-item {
+    cursor: pointer;
+    border: 1px solid white;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    text-align: left;
+    min-width: 0;
+    overflow: hidden;
+    /* Min width 0 ở parent trong flex box giúp text-overflow hoạt động bình thường */
+}
+
+/* Các ảnh trong các thẻ giới thiệu phim */
+.movie-item img {
+    width: 100%;
+    height: 20rem;
+    object-fit: fill;
+    border-radius: 10px;
+}
+
+/* Tiêu đề phim ở các thẻ */
+.movie-item span {
+    margin-top: 0.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: inline-block;
+    width: clac(100%);
+}
+
+.movie-item:hover {
+    color: blue;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Khu vực bình luận phim *\
+\*-------------------------*/
+.review-movie {
+    margin-bottom: 2rem;
+}
+
+.review-movie h2::before {
+    content: '';
+    border: 3px solid rgb(88, 11, 241);
+    margin-right: 1rem;
+}
+
+.review-movie h2 {
+    margin-bottom: 2rem;
+}
+
+.article-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+    min-width: 0;
+}
+
+.article-container a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-right: 0.5rem;
+}
+
+.hot-article,
+.other-article {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.2rem;
+}
+
+.hot-article img {
+    margin-bottom: 2rem;
+    width: 100%;
+    height: auto;
+}
+
+.article-content {
+    display: flex;
+}
+
+.hot-article .article-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.article-content:hover {
+    color: rgb(57, 57, 255);
+    /*Không hoạt động khi dùng thẻ a nhưng thẻ khác như span thì được??*/
+    transition: transform 1s;
+    transform: scale(1.1);
+}
+
+/*Khu vực Footer*\
+\*-------------*/
+footer {
+    background-color: #333333;
+    color: #D0D0D0;
+    padding-left: 5vw;
+    padding-top: 2rem;
+}
+
+/* Mục ở trên */
+.general-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+footer li,
+footer p {
+    list-style: none;
+    line-height: 2rem;
+}
+
+footer a {
+    text-decoration: none;
+    color: #D0D0D0;
+}
+
+footer h3 {
+    margin-bottom: 1.5rem;
+}
+
+/* Mục follow us */
+footer .follow-us li {
+    display: inline-block;
+}
+
+.follow-us i {
+    font-size: 2rem;
+    margin-right: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.follow-us img {
+    width: 30%;
+    height: auto;
+    object-fit: fill;
+}
+
+/* Mục company info */
+footer .company-info {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: start;
+    column-gap: 1rem;
+}
+
+footer .company-info img {
+    width: 5rem;
+    height: 5rem;
+    display: inline-block;
+}
+
+footer a:hover,
+footer i:hover {
+    transition: transform 1s;
+    color: orange;
+    transform: scale(1.5);
+}
+
+footer hr {
+    margin: 1rem 0;
+    width: 90%;
+}
+
+/* Nút logout và tên người dùng */
+#logout-button:hover {
+    cursor: pointer;
+    transition: none;
+    transform: none;
+    color: rgb(255, 0, 0);
+}
+
+#username:hover {
+    cursor: pointer;
+    transition: none;
+    transform: none;
+    color: rgb(0, 0, 0);
+}
+
+/* Responsive */
+
+@media only screen and (min-width: 1920px) {
+    html {
+        font-size: 16px;
+    }
+
+    .carousel-item img {
+        user-select: none;
+        display: block;
+        width: 100%;
+        object-fit: fill;
+        height: 70vh;
+        padding-left: 1rem;
+    }
+}
+
+@media only screen and (min-width: 1768px) and (max-width: 1920px) {
+
+    .carousel-item img {
+        user-select: none;
+        display: block;
+        width: 100%;
+        object-fit: fill;
+        height: 70vh;
+        padding-left: 1rem;
+    }
+
+    /* Font size cho thanh nav */
+    .head-nav-container ul li,
+    .register-login a {
+        font-size: 1.5rem;
+    }
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1768px) {
+    html {
+        font-size: 12px;
+    }
+
+
+    .showing-movie,
+    .incoming-movie {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: space-evenly;
+        gap: 2rem;
+    }
+
+    .carousel-item img {
+        user-select: none;
+        display: block;
+        width: 100%;
+        object-fit: fill;
+        height: 70vh;
+        padding-left: 1rem;
+    }
+
+    .head-nav-container ul li,
+    .register-login a {
+        font-size: 1.4rem;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1200px) {
+    html {
+        font-size: 10px;
+    }
+
+    .other-article .article-content:last-child {
+        display: none;
+    }
+
+    .showing-movie,
+    .incoming-movie {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: space-evenly;
+        gap: 2rem;
+    }
+
+    .carousel-item img {
+        user-select: none;
+        display: block;
+        width: 100%;
+        object-fit: fill;
+        height: 50vh;
+        padding-left: 1rem;
+    }
+
+    .head-nav-container ul li,
+    .register-login a {
+        font-size: 1.4rem;
+    }
+
+    .head-nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 10px;
+        /* background-color: var(--nav-background-color); */
+        background-color: white;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        transition: background-color 0.5s ease;
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+    html {
+        font-size: 8px;
+    }
+
+    .other-article .article-content:last-child,
+    .other-article .article-content:nth-child(2) {
+        display: none;
+    }
+
+    .showing-movie,
+    .incoming-movie {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        justify-content: space-evenly;
+        gap: 2rem;
+    }
+
+    .carousel-item img {
+        user-select: none;
+        display: block;
+        width: 100%;
+        object-fit: fill;
+        height: 40vh;
+        padding-left: 1rem;
+    }
+
+    .head-nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        /* background-color: var(--nav-background-color); */
+        background-color: white;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        transition: background-color 0.5s ease;
+    }
+
+    .head-nav-container ul li,
+    .register-login a {
+        font-size: 1.4rem;
+    }
+
+    .head-nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 10px;
+        /* background-color: var(--nav-background-color); */
+        background-color: white;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        transition: background-color 0.5s ease;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    html {
+        font-size: 6px;
+    }
+
+    .other-article .article-content:last-child,
+    .other-article .article-content:nth-child(2) {
+        display: none;
+    }
+
+    .carousel-item img {
+        user-select: none;
+        display: block;
+        width: 100%;
+        object-fit: fill;
+        height: 25vh;
+        padding-left: 1rem;
+    }
+
+    .head-nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        /* background-color: var(--nav-background-color); */
+        background-color: white;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        transition: background-color 0.5s ease;
+    }
+
+    .showing-movie,
+    .incoming-movie {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        justify-content: space-evenly;
+        gap: 2rem;
+    }
+
+    .head-nav-container ul li,
+    .register-login a {
+        font-size: 1.4rem;
+    }
+
+    .head-nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 10px;
+        /* background-color: var(--nav-background-color); */
+        background-color: white;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        transition: background-color 0.5s ease;
+    }
+}

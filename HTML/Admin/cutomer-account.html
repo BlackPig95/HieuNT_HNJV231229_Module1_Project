@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Manage Movies</title>
+        <!-- Fontawseom -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+            integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!-- Link CSS -->
+        <link href="../../CSS/Admin/customer-account.css" rel="stylesheet" />
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+        </style>
+    </head>
+
+    <body>
+        <nav>
+            <h2>Admin Nickname</h2>
+            <div>
+                <ul class="nav-bar">
+                    <li><a href="../../HTML/Admin/admin.html">Dashboard</a></li>
+                    <li><a href="../../HTML/Admin/manage-product.html">Manage
+                            movies</a></li>
+                    <li><a href="../../HTML/Admin/manage-order.html">Orders</a></li>
+                    <li class="active"><a style="color: white;"
+                            href="../../HTML/Admin/cutomer-account.html">Customers</a></li>
+                </ul>
+                <p><i style="color: white" class="fa-solid fa-right-from-bracket"></i>Log out</p>
+            </div>
+        </nav>
+        <section class="information-section">
+            <div class="information-nav">
+                <h1>Manage Customers Account</h1>
+                <div>
+                    <form class="search-field">
+                        <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        <input onkeyup="searchFunction()" id="search-input" type="text" placeholder="Search" />
+                    </form>
+                    <i class="fa-regular fa-bell"></i>
+                    <div class="avatar-section">
+                        <img src="../../Images/AvatarRikkei.jpg" />
+                        <div>
+                            <a>User: Admin</a>
+                            <i class="fa-solid fa-angle-down"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Phần trên là các thanh nav bar -->
+            </div>
+            <div class="customer-account-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Order</th>
+                            <th>Customer Name</th>
+                            <th>Customer ID</th>
+                            <th>Register Date</th>
+                            <th>Email</th>
+                            <th>Action</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="customer-table-body">
+
+                    </tbody>
+                </table>
+                <div class="pagination-nav" id="pagination-nav">
+                    <div class="pagination" id="pagination">
+
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+        <script src="../../JS/Admin/customer-account.js"></script>
+        <!-- Swal -->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.5/dist/sweetalert2.all.min.js"></script>
+    </body>
+
+</html>

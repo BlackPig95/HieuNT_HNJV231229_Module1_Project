@@ -1,0 +1,139 @@
+@import "admin.css";
+
+/* Các nút add và sort */
+.manage-movie {
+    padding: 2rem 2rem 5rem 2rem;
+    margin: 2rem;
+    border-radius: 20px;
+    background-color: white;
+}
+
+.manage-movie .manage-action {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.manage-movie .manage-action button {
+    background-color: black;
+    color: white;
+    text-align: center;
+    width: 7rem;
+    height: 2rem;
+    border-radius: 5px;
+}
+
+.manage-movie .manage-action form {
+    width: 8rem;
+    border: 1px solid rgba(65, 59, 59, 0.5);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+}
+
+.manage-movie .manage-action form label {
+    display: inline-block;
+}
+
+.manage-movie .manage-action form select {
+    border: none;
+}
+
+/* Table section */
+.manage-table {
+    position: relative;
+}
+
+.manage-movie .manage-table {
+    width: 100%;
+    text-align: left;
+}
+
+.manage-movie .manage-table table {
+    border-collapse: collapse;
+}
+
+.manage-movie .manage-table thead tr th:nth-child(1) {
+    width: 10%;
+}
+
+.manage-movie .manage-table thead tr th:nth-child(2) {
+    width: 20%;
+}
+
+.manage-movie .manage-table thead tr th:nth-child(3),
+.manage-movie .manage-table thead tr th:nth-child(4),
+.manage-movie .manage-table thead tr th:nth-child(5),
+.manage-movie .manage-table thead tr th:nth-child(6) {
+    width: 10%;
+}
+
+.manage-movie .manage-table thead tr th:nth-child(7) {
+    width: 20%;
+}
+
+.manage-movie .manage-table thead tr th:nth-child(8) {
+    text-align: center;
+}
+
+tr {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+td,
+th {
+    max-width: 15rem;
+    min-width: 1px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 1rem 0;
+}
+
+/* Style các nút ở mục action */
+.detail-button {
+    background-color: rgb(0, 138, 0);
+    border: none;
+    color: white;
+    width: 3rem;
+    height: 1.5rem;
+}
+
+.update-button {
+    background-color: red;
+    border: none;
+    color: white;
+    width: 3rem;
+    height: 1.5rem;
+}
+
+.update-button:hover {
+    cursor: pointer;
+}
+
+/* Style các nút chuyển trang */
+.button-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 2rem;
+}
+
+.pagination-button {
+    background-color: #F6F6F6;
+    color: black;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 5px;
+}
+
+.pagination-button.active {
+    background-color: black;
+    color: white;
+}
+
+.pagination-button:hover {
+    cursor: pointer;
+}

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>BP Cinema</title>
+        <!-- Google font Nunito Sans -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+            rel="stylesheet">
+        <!-- Fontawesome CDN -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+            integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!-- Link CSS -->
+        <link href="./CSS/Index/index.css" rel="stylesheet" />
+        <style>
+            * {
+                font-family: "Nunito Sans", sans-serif;
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <div class="head-nav-container">
+                <!-- <a href="#"><img src="./Images/Logo.jpg" alt="Avatar" /></a> -->
+                <a href="#"><img src="./Images/cinema-logo.png" alt="Avatar" /></a>
+                <nav>
+                    <ul>
+                        <li><a href="#movie-contents">Mua vé</a></li>
+                        <li><a href="#">Tìm kiếm phim</a></li>
+                        <li><a href="#">Sự kiện/ Ưu đãi</a></li>
+                        <li><a href="#">Kiểm tra rạp/ giá vé</a></li>
+                    </ul>
+                </nav>
+                <div class="register-login">
+                    <a href="./HTML/Register-Login/login.html">Đăng nhập</a>
+                    <a href="./HTML/Register-Login/register.html">Đăng ký</a>
+                </div>
+            </div>
+            <div class="carousel-container">
+                <div class="carousel-track">
+                    <!-- <div class="carousel-item">
+                        <a href="#"><img src="./Images/Slideshow_Index/GxK.jpg" alt="photo-carousel"></a>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="#"><img src="./Images/Slideshow_Index/Interstella.jpg" alt="photo-carousel"></a>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="#"><img src="./Images/Slideshow_Index/Oppenheimer.jpg" alt="photo-carousel"></a>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="#"><img src="./Images/Slideshow_Index/Promo.jpg" alt="photo-carousel"></a>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="#"><img src="./Images/Slideshow_Index/Promo_Gift.jpg" alt="photo-carousel"></a>
+                    </div> -->
+                </div>
+                <button onclick="ChangeIndex(-1)" class="prev-button" type="button"><i
+                        class="fa-solid fa-angle-left"></i></button>
+                <button onclick="ChangeIndex(1)" class="next-button" type="button"><i
+                        class="fa-solid fa-angle-right"></i></button>
+            </div>
+        </header>
+        <main>
+            <section id="movie-contents" class="main-movie-section">
+                <div>
+                    <h2>PHIM</h2>
+                    <div class="main-movie-title">
+                        <h3 class="active">Phim đang chiếu</h3>
+                        <!--Thêm class active trong JS để bật tắt thanh gạch chân-->
+                        <h3>Phim sắp chiếu</h3>
+                    </div>
+                </div>
+                <div class="movie-contents">
+                    <div>
+                        <div id="showing-movie" class="showing-movie">
+                            <!-- <div class="movie-item">
+                                <img src="./Images/Slideshow_Index/Interstella.jpg" alt="movie" />
+                                <span class="movie-title">Interstella</span>
+                            </div>
+                            <div class="movie-item">
+                                <img src="./Images/Slideshow_Index/GxK.jpg" alt="movie" />
+                                <span class="movie-title">This is a very long movie title that will need to be hiden
+                                    when
+                                    overflow</span>
+                            </div>
+                            <div class="movie-item">
+                                <img src="./Images/Slideshow_Index/GxK.jpg" alt="movie" />
+                                <span class="movie-title">Godzilla X Kong</span>
+                            </div>
+                            <div class="movie-item">
+                                <img src="./Images/Slideshow_Index/GxK.jpg" alt="movie" />
+                                <span class="movie-title">Godzilla X Kong</span>
+                            </div>
+                            <div class="movie-item">
+                                <img src="./Images/Slideshow_Index/GxK.jpg" alt="movie" />
+                                <span class="movie-title">Godzilla X Kong</span>
+                            </div>
+                            <div class="movie-item">
+                                <img src="./Images/Slideshow_Index/GxK.jpg" alt="movie" />
+                                <span class="movie-title">Godzilla X Kong</span>
+                            </div>
+                            <div class="movie-item">
+                                <img src="./Images/Slideshow_Index/GxK.jpg" alt="movie" />
+                                <span class="movie-title">Godzilla X Kong</span>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="hidden"><!--Sau này sẽ sử dụng JS để bật tắt class khi chuyển trang-->
+                        <div class="incoming-movie">
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="review-movie">
+                <h2>GÓC REVIEW PHIM</h2>
+                <div class="article-container">
+                    <div class="hot-article">
+                        <article class="article-content">
+                            <a href="#"><img src="./Images/Slideshow_Index/KongFightGod.jpg" /></a>
+                            <a href="#">Kong và Godzilla đấm nhau chảy máu: Ai mạnh hơn ai?</a>
+                        </article>
+                    </div>
+                    <div class="other-article">
+                        <article class="article-content">
+                            <a href="#"><img src="./Images/Slideshow_Index/KongFightGod.jpg" /></a>
+                            <a href="#">Kong và Godzilla đấm nhau chảy máu: Ai mạnh hơn ai?</a>
+                        </article>
+                        <article class="article-content">
+                            <a href="#"><img src="./Images/Slideshow_Index/KongFightGod.jpg" /></a>
+                            <a href="#">Kong và Godzilla đấm nhau chảy máu: Ai mạnh hơn ai?</a>
+                        </article>
+                        <article class="article-content">
+                            <a href="#"><img src="./Images/Slideshow_Index/KongFightGod.jpg" /></a>
+                            <a href="#">Kong và Godzilla đấm nhau chảy máu: Ai mạnh hơn ai?</a>
+                        </article>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <div class="general-info">
+                <div class="about-us">
+                    <h3>Giới thiệu</h3>
+                    <div>
+                        <ul>
+                            <li><a href="#">Về chúng tôi</a></li>
+                            <li><a href="#">Quy chế hoạt động</a></li>
+                            <li><a href="#">Thỏa thuận sử dụng</a></li>
+                            <li><a href="#">Chính sách bảo mật</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="follow-us">
+                    <h3>Hãy theo dõi chúng tôi để nhận được các ưu đãi</h3>
+                    <div>
+                        <ul>
+                            <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                            <li><img src="./Images/Footer_Index/Logo-government.png" alt="goverment-registered" /></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="customer-support">
+                    <h3>Liên hệ hỗ trợ</h3>
+                    <p>Hotline: 0123456789</p>
+                    <p>Giờ làm việc: 9:00 - 22:00 hàng ngày</p>
+                    <p>Email hỗ trợ: abcxyz@gmail.com</p>
+                </div>
+            </div>
+            <hr>
+            <div class="company-info">
+                <img src="./Images/cinema-logo.png" alt="Avatar" />
+                <div>
+                    <h2>Công ty cổ phần phim BP</h2>
+                    <p>Tòa nhà 125 A Láng Hạ, phường Đống Đa, Hà Nội, Việt Nam</p>
+                    <p>Số điện thoại: 028.345.6789</p>
+                </div>
+            </div>
+        </footer>
+        <script src="./JS/IndexJS/index.js"></script>
+        <!-- Sweet Alert -->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.5/dist/sweetalert2.all.min.js"></script>
+    </body>
+
+</html>
